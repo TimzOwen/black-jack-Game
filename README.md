@@ -1,2 +1,3 @@
 # black-jack-Game
-a simple game crd changer vs a deal in js
+a simple game card player changer vs a dealer player   written in java script.
+with a simple hmtl UI for user interactive
