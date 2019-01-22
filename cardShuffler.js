@@ -10,13 +10,6 @@ let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine',
   'Three', 'Two', 'One'
 ];
 
-
-//variales to access the UI DOM VARIABLES
-let textArea = document.getElementById('txtArea');
-let hitBtn = document.getElementById('hitGame');
-let stayBtn = document.getElementById('stayGame');
-let newGameBtn = document.getElementById('newGame');
-
 //GAME VARIABLES
 let gameStarted = false,
 gameOver= false,
@@ -25,7 +18,15 @@ dealerCards = [],
 playerCards = [],
 dealerScore = 0,
 playerScore = 0,
-deck = [];
+ deck = [];
+
+//variales to access the UI DOM VARIABLES
+let textArea = document.getElementById('txtArea');
+let hitBtn = document.getElementById('hitGame');
+let stayBtn = document.getElementById('stayGame');
+let newGameBtn = document.getElementById('newGame');
+
+
 
 
 //hide buttons before game start
@@ -55,6 +56,21 @@ newGameBtn.addEventListener('click', function() {
   showStatus();
 
 });
+
+hitBtn.addEventListener('click', function()
+{
+  playerCards.push(getNextCard());
+  checkForEndOfGame();
+  showStatus();
+});
+
+stayBtn.addEventListener('click', function()
+{
+  gameOver = true;
+  checkForEndOfGame();
+  showStatus();
+});
+
 //create function that creates deck each time we start game
 function createDeck() {
   //clear deck sfter game gameOver
@@ -91,6 +107,74 @@ function getCardString(card) {
   return card.value + ' of ' + card.suit;
 }
 
+function getCardNumericValue(card)
+{
+  switch(card.value)
+  {
+    case 'Ace':
+      return 1;
+
+      case 'Two':
+      return 2;
+
+      case 'Three':
+      return 3;
+
+      case 'Four':
+      return 4;
+
+      case 'Five':
+      return 5;
+
+      case 'Six':
+      return 6;
+
+      case 'Seven':
+      return 7;
+
+      case 'Eight':
+      return 8;
+
+      case 'Nine':
+      return 9;
+
+      case 'Ten':
+      return 10;
+  }
+}
+
+function getScore(cardArray)
+{
+  let score = 0;
+  let hasAce = false;
+  for(let i =0; i<cardArray.length; i++)
+  {
+    let card = cardArray[i];
+    score += getCardNumericValue(card);
+    if(card.value == 'Ace')
+    {
+      hasAce = true;
+    }
+  }
+  if (hasAce && score + 10 <= 21)
+  {
+    return score +10;
+  }
+  return score;
+}
+
+function updateScore()
+{
+  dealerScore = getScore(dealerCards);
+  playerrScore = getScore(playerCards);
+}
+
+
+function checkForEndOGame()
+{
+  //TODO
+}
+
 //show status function
  function showStatus()
  {
@@ -99,6 +183,46 @@ function getCardString(card) {
      textArea.innerText="Welcome to Black-Jack Game";
      return;
    }
+
+   let dealerCardString = '';
+   for(let i=0; i< dealerCards; i++)
+   {
+     dealerCardString += getCardString(dealerCards[i]) + '\n';
+   }
+
+   let playerCardString = '';
+   for(let i=0; i< playerrCards; i++)
+   {
+     playerCardString += getCardString(playerCards[i]) + '\n';
+   }
+
+   updateScore();
+
+   textArea.innerText =
+       'Dealer hs: \n' +
+        dealerCardString +
+         '(Score: ' + dealerScore + ')\n\n' +
+
+        'Player hs: \n' +
+        playerCardString +
+         '(Score: ' + playerScore + ')\n\n';
+      if(gameOver)
+      {
+        if(playerWon)
+        {
+          textArea.innerText += 'You Won!';
+        }
+        else
+        {
+          textArea.innerText += 'Dealer Wins';
+        }
+
+        newGameBtn.style.display = 'inline';
+  hitBtn.style.display = 'none';
+  stayBtn.style.display = 'none';
+      }
+
+
    for(var i = 0; i < deck.length; i ++)
    {
      textArea.innerText += '\n' + getCardString(deck[i]);
