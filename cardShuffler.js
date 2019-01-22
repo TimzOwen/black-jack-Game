@@ -172,7 +172,39 @@ function updateScore()
 
 function checkForEndOGame()
 {
-  //TODO
+  updateScore();
+  if(gameOver)
+  {
+    //let dealer take the cards
+    while(dealerScore < playerScore && playerScore <=21
+     && dealerScore <=21)
+     {
+       dealerCards.push(getNextCard());
+       updateScore();
+     }
+  }
+  if(playerScore > 21)
+  {
+    playerWon = false;
+    gameOver = true;
+  }
+  else if(dealerScore > 21)
+  {
+    playerWon = true;
+    gameOver = true;
+
+  }
+  else if (gameOver)
+  {
+    if(playercore > dealerScore)
+    {
+      playerWon = true;
+    }
+    else
+    {
+      playerWon=false;
+    }
+  }
 }
 
 //show status function
