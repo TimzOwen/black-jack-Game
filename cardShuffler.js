@@ -2,8 +2,12 @@
 //Owen Timz
 //create variable and output
 
-let card1 = 'Ace of Spade'
-    card2 = 'Ten of Hearts';
+//create arrays to hold the cards
+let deck = ['Ace of Spade',
+            'Two of Spade',
+            'Three of Spade'];
+//variable to hold players getCardString
+let playerCards = [deck[0], deck[1]];
 //print Results
 console.log("Welcome to Black-Jack Game");
 
