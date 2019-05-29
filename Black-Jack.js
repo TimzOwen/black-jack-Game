@@ -7,7 +7,7 @@ let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
 let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine',
   'Nine', 'Eight', 'Seven', 'Six', 'Five', 'Four',
   'Three', 'Two', 'One'
-];
+];//this is just a random selectionof colored cards
 
 
 //DOM variables
@@ -47,7 +47,7 @@ newgamee.addEventListener('click', function()
   gameover =false;
   playerwon = fase;
 
-  deck = createDeck();
+  deck = createDeck();// check oj the values of BOM
   shuffleDeck(deck);
 
   dealerCards =[getNextCard(), getNextCard()];
@@ -63,9 +63,12 @@ newgamee.addEventListener('click', function()
 function createDeck() {
  let deck = [];
 
- for (let suitidx = 0; suitidx < suits.length; suitidx++) {
-   for (let valueidx = 0; valueidx < values.length; valueidx++) {
-     let card = {
+ for (let suitidx = 0; suitidx < suits.length; suitidx++)
+ {
+   for (let valueidx = 0; valueidx < values.length; valueidx++) 
+   {
+     let card = 
+         {
        suit: suits[suitidx],
        value: values[valueidx]
      };
@@ -74,7 +77,7 @@ function createDeck() {
    }
  }
  return deck;
-}
+}variables
 
 function getCardString(card) {
  return card.suit + ' of ' + card.value;
