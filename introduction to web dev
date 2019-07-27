@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Html the Big Picture</title>
+        <style>
+            /* p{
+                color: blue;
+            }
+            span{
+                color: brown;
+            }
+            h1,h2{
+                text-align: center;
+                color: black;
+            } */
+            .group-desc{
+                /*This uses the class id */
+                color: black;
+                text-transform: inherit;
+                font-weight: 500;
+            }
+            #tittle-selector{
+                /*Uses the Id used for reference */
+                color: red;
+            }
+            #group-description{
+                text-align: center;
+                color: blue;
+                font-size: 2em;
+                /*gives space around the margins from parent page*/
+                margin: 2em;
+            
+            }
+            #title-selector{
+                color: blue;
+                text-decoration: underline;
+                text-transform: uppercase;
+                font-weight: bold;
+                text-align: center
+            }
+            body{
+                /*magenta color combination */
+                background-color: rgb(255 0 255)
+            }
+            table{
+                /* align-content: center; */
+                border: 2px;
+            }
+            #tHeader{
+                color: black;
+                font-style:oblique
+                
+            }
+            #table-contents{
+                color: black;
+            }
+            #FistDiv{
+                width: 450px;
+                background: blue;
+                height: 80px;
+            }
+            #secondDiv{
+                background: pink;
+                height: 80px;
+                width: 450px
+            }
+            
+        </style>
+        <script type="text/javascript">
+        //scriptig values;
+        var table_contents;
+        var table;
+        table = (SVGLinearGradientElement).apply("Documentation");
+        </script>
+    </head>
+    <body>
+        <h1 id="title-selector"><i>Announcing TensorFlow Nakuru</i> </h1>
+        <p class="group-desc"> 
+        TensorFlow Nakuru And we shall be covering up to from beginner to advanced web developement
+             The events Finances aim at motivating and facilitating of the event in the tech community 
+             TensorFlow Nakuru And we shall be covering up to from beginner to advanced web developement
+             The events Finances aim at motivating and facilitating of the event in the tech community 
+        </p>   
+            <hr>
+        <p class="group-desc"> 
+            <strong>coming around this AugustTensorFlow Nakuru And we shall be covering up to from beginner to advanced web developement
+                The events Finances aim at motivating and facilitating of the event in the tech community 
+                TensorFlow Nakuru And we shall be covering up to from beginner to advanced web developement
+                The events Finances aim at motivating and facilitating of the event in the tech community 
+            </strong> 
+        </p>
+        <h2 id="group-description">
+            <em>Venue is Kabarak University</em>
+        </h2>
+        <table align="center" border="4px">
+            <caption id="tHeader">Schedule for the Day</caption>
+            <div id="table-contents" style="align-self: baseline">
+                    <tr>
+                            <th>Lead</th>
+                            <th>10-11</th>
+                            <th>11-12</th>
+                            <th>12-1:30</th>
+                        </tr>
+                        <tr>
+                            <td>Chris</td>
+                            <td>Intro to AI</td>
+                            <td>TensorFlow 2.0</td>
+                            <td>android AI </td>
+                        </tr>
+                        <tr>
+                             <td>Hussein</td>
+                            <td>Intro to AI</td>
+                             <td>TensorFlow 2.0</td>
+                             <td>android AI </td>
+                         </tr>
+            </div>
+
+            <div id="FistDiv">
+
+            </div> 
+            <div id="secondDiv">
+
+            </div>
+
+        </table>
+    </body>
+</html>
