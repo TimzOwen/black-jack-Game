@@ -5,7 +5,7 @@ by Owen
 let suits = ['Hearts', 'Clubs', 'Diamonds', 'Spades'];
 
 let values = ['Ace', 'King', 'Queen', 'Jack', 'Ten', 'Nine',
-  'Nine', 'Eight', 'Seven', 'Six', 'Five', 'Four',
+  'Nine', 'Eight', 'Seven', '', 'Five', 'Four',
   'Three', 'Two', 'One'
 ];//this is just a random selectionof colored cards
 
