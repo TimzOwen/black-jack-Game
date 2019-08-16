@@ -4,18 +4,7 @@
         <meta charset="utf-8">
         <title>Html the Big Picture</title>
         <style>
-            /* p{
-                color: blue;
-            }
-            span{
-                color: brown;
-            }
-            h1,h2{
-                text-align: center;
-                color: black;
-            } */
-            .group-desc{
-                /*This uses the class id */
+            
                 color: black;
                 text-transform: inherit;
                 font-weight: 500;
